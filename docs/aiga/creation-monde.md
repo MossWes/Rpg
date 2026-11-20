@@ -20,9 +20,9 @@ et une phrase d'explication. **11 tons**, dans l'ordre du carrousel :
 |---|---|---|---|---|
 | 1 | Cinématographique | pellicule | turquoise | Histoires racontées scène après scène, avec une tension croissante, des révélations dramatiques et un rythme de film |
 | 2 | Surréaliste | étincelles | violet | Histoires oniriques et bizarres avec une logique étrange et des rebondissements inattendus |
-| 3 | Urbain sombre | flamme | rouge | *(description pas capturée)* |
+| 3 | Urbain sombre | flamme | rouge | Récits urbains sur la vie de rue, la survie et les dures réalités de la vie citadine |
 | 4 | Léger | soleil | vert | Histoires joyeuses et entraînantes avec une énergie positive et des moments de bien-être |
-| 5 | Sombre | lune | gris | *(description pas capturée)* |
+| 5 | Sombre | lune | gris | Histoires sombres et atmosphériques avec une complexité morale et des thèmes profonds |
 | 6 | Épique | éclair | mauve | Grands récits de héros légendaires, de batailles massives et d'aventures qui changent le monde |
 | 7 | Mystérieux | œil | bleu | Histoires énigmatiques remplies de secrets, d'intrigues et de phénomènes inexpliqués |
 | 8 | Romance | cœur | rose | Narration romantique centrée sur l'émotion, axée sur l'alchimie, le désir et la tension relationnelle |
