@@ -40,6 +40,15 @@ Les mondes partagés portent une étiquette de mode :
 | Tout le monde | Parties ouvertes : la communauté vote, le choix le plus populaire devient l'histoire (ex. 1 248 votants). |
 | Discord | Un bot aiga_ poste les scènes dans un salon ; les membres votent avec des boutons. |
 
+### Écran « comment jouer » (capture du 2026-11-20, `captures/lancer-partie/01-choix-du-mode.png`)
+Au lancement d'une partie, trois cartes l'une sous l'autre, chacune avec une flèche → :
+1. **Solo / Multijoueur** — accroche « Votre histoire, vos règles » (vert). « Jouez seul ou invitez des amis
+   à vous accompagner. » Points : jouez à votre rythme · invitez des amis **via un lien** · contrôle total
+   sur le récit.
+2. Séparateur « Ou jouez avec votre communauté », puis **Vote communautaire** — accroche « Aventure
+   collective » (bleu). « Tout le monde peut rejoindre et voter sur les choix. »
+3. **Discord** — carte avec un bouton « Configuration » (à moitié cachée sur la capture).
+
 Saisie : texte libre (280 caractères max), `@` pour viser un personnage, `#` pour un objet, ou choix
 proposés avec leur niveau de risque (« High risk », « Med risk »).
 
