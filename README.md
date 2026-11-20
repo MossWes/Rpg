@@ -11,6 +11,7 @@ avec un maître du jeu IA, relevée le 2026-11-20.
 | `docs/aiga/presentation.md` | Ce qu'est aiga_ : éditeur, modèle gratuit, modes de jeu, langues, plateformes |
 | `docs/aiga/mecaniques.md` | Les 6 piliers du jeu : récit, mémoire, traits, dés, image du héros, Game Book |
 | `docs/aiga/moteur-echoes-v2.md` | La version 2 (moteur ECHOES, 12 oct. 2026) : vitesse, mémoire, dés à collectionner, éditeur de monde |
+| `docs/aiga/creation-monde.md` | L'assistant de création de monde : les 11 tons narratifs, le héros (captures) |
 | `docs/aiga/exemples.md` | Les démos du site : Grimjaw le forgeron, le monde Emberfall, le Game Book de Kael |
 | `docs/aiga/mondes-partages.md` | Les mondes publiés par les joueurs, avec liens, mode et style graphique |
 | `docs/idees-pour-nos-jeux.md` | Ce qu'on peut reprendre comme mécaniques pour nos propres jeux (dont Braisemont) |
