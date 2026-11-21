@@ -13,6 +13,7 @@ avec un maître du jeu IA, relevée le 2026-11-20.
 | `docs/aiga/moteur-echoes-v2.md` | La version 2 (moteur ECHOES, 12 oct. 2026) : vitesse, mémoire, dés à collectionner, éditeur de monde |
 | `docs/aiga/creation-monde.md` | L'assistant de création de monde : les 11 tons narratifs, le héros (captures) |
 | `docs/aiga/exemples.md` | Les démos du site : Grimjaw le forgeron, le monde Emberfall, le Game Book de Kael |
+| `docs/aiga/mondes-francais.md` | L'écran « Choisissez votre monde » (filtres, fiche monde) et les 21 mondes en français |
 | `docs/aiga/mondes-partages.md` | Les mondes publiés par les joueurs, avec liens, mode et style graphique |
 | `docs/idees-pour-nos-jeux.md` | Ce qu'on peut reprendre comme mécaniques pour nos propres jeux (dont Braisemont) |
 | `docs/sources.md` | Les pages lues et ce qui n'a pas pu l'être |
