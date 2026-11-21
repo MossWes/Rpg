@@ -1,0 +1,373 @@
+<title>Notre JDR avec MJ IA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout : un carnet de MJ, une colonne de lecture, questions en fiches à cocher, synthèse en tableau. */
+:root{
+  --paper:#f3f1ec; --sheet:#fbfaf7; --ink:#1d2430; --muted:#5d6573; --line:#d9d5cc;
+  --accent:#1f5566; --accent-soft:#dcebee; --ochre:#9a6a12; --ochre-soft:#f3e7cc;
+  --ok:#2f6b3a; --ok-soft:#e1efe2; --warn:#8a4b12;
+  --display:"Alegreya SC", Georgia, serif; --body:"Alegreya Sans", system-ui, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15191f; --sheet:#1c2129; --ink:#e7e3da; --muted:#a3a9b4; --line:#323946;
+  --accent:#7fc0cf; --accent-soft:#1f3640; --ochre:#e0b25a; --ochre-soft:#3a2f1a;
+  --ok:#86c792; --ok-soft:#1f3324; --warn:#e3a06a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15191f; --sheet:#1c2129; --ink:#e7e3da; --muted:#a3a9b4; --line:#323946;
+  --accent:#7fc0cf; --accent-soft:#1f3640; --ochre:#e0b25a; --ochre-soft:#3a2f1a;
+  --ok:#86c792; --ok-soft:#1f3324; --warn:#e3a06a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:2.3rem;letter-spacing:.01em}
+h2{font-size:1.55rem;margin-top:2.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--line)}
+h3{font-size:1.15rem}
+p{margin:.6rem 0;max-width:68ch}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.lede{font-size:1.12rem;color:var(--muted)}
+a{color:var(--accent)}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Bandeau « qui répond » */
+.who{margin-top:1.4rem;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.who label{font-weight:700}
+.who .names{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 14px}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
+.who input{border:1px solid var(--line);border-radius:6px;padding:5px 10px;background:var(--paper);width:9rem}
+.status{font-size:.88rem;color:var(--muted);margin-left:auto}
+.status.ok{color:var(--ok)} .status.warn{color:var(--warn)}
+
+/* Vision */
+.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:1rem 0}
+.level{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px}
+.level .n{font-family:var(--display);color:var(--accent);font-size:1.4rem}
+.level p{margin:.2rem 0 0;font-size:.95rem}
+.rule{background:var(--accent-soft);border-radius:8px;padding:12px 14px;margin:1rem 0}
+.rule strong{color:var(--accent)}
+ol.turn{padding-left:1.3rem;max-width:68ch} ol.turn li{margin:.3rem 0}
+.refs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:.8rem}
+.refs figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.refs img{display:block;width:100%;height:auto}
+.refs figcaption{font-size:.86rem;color:var(--muted);padding:6px 10px}
+.refs figure:first-child{grid-column:1/-1}
+
+/* Questions */
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
+.btn{border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:6px;padding:6px 14px}
+.btn.solid{background:var(--accent);color:var(--sheet)}
+.q{background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:14px}
+.q h3{display:flex;gap:10px;align-items:baseline}
+.q h3 .num{color:var(--muted);font-family:var(--body);font-size:.9rem;font-variant-numeric:tabular-nums;min-width:1.6rem}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opt{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;border:1px solid var(--line);border-radius:8px;padding:9px 12px;cursor:pointer;align-items:start}
+.opt:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.opt input{margin-top:.3rem;accent-color:var(--accent)}
+.opt .lab{font-weight:700;min-width:0}
+.opt .det{grid-column:2;font-size:.93rem;color:var(--muted);min-width:0}
+.star{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.04em;color:var(--ochre);background:var(--ochre-soft);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.why{font-size:.92rem;color:var(--muted);border-left:3px solid var(--ochre);padding:2px 0 2px 10px;margin:10px 0 0}
+.note{width:100%;margin-top:10px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--paper);min-height:2.6rem;resize:vertical}
+.others{margin-top:10px;display:grid;gap:6px}
+.other{font-size:.92rem;background:var(--paper);border-radius:6px;padding:6px 10px}
+.other b{color:var(--accent)}
+.agree{font-size:.82rem;color:var(--ok);font-weight:700}
+
+/* Synthèse */
+.tablewrap{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:8px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:var(--paper)}
+td.same{color:var(--ok);font-weight:700}
+.empty{color:var(--muted);font-style:italic}
+.copybox{margin-top:10px;width:100%;min-height:8rem;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--paper);font-size:.85rem}
+footer{margin-top:3rem;font-size:.85rem;color:var(--muted)}
+@media (max-width:620px){
+  h1{font-size:1.8rem}
+  .levels{grid-template-columns:1fr}
+  .refs{grid-template-columns:1fr}
+  .status{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Cahier de décisions · Wesley &amp; Greg · version du 21 nov. 2026</div>
+    <h1>Notre JDR avec MJ IA</h1>
+    <p class="lede">Un jeu de rôle où une IA tient le rôle du maître du jeu. Rien n'est décidé : chacun coche ses réponses, on compare, on en parle.</p>
+    <div class="who" role="group" aria-labelledby="who-label">
+      <label id="who-label">Qui répond ?</label>
+      <div class="names">
+        <button class="chip" type="button" data-name="Wesley" aria-pressed="false">Wesley</button>
+        <button class="chip" type="button" data-name="Greg" aria-pressed="false">Greg</button>
+        <input id="who-other" type="text" placeholder="Autre prénom" aria-label="Autre prénom">
+      </div>
+      <span id="status" class="status">Choisis ton prénom pour commencer.</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="vision">
+    <h2 id="vision">L'idée</h2>
+    <p>L'IA raconte l'histoire, joue les personnages et surtout <strong>met en scène</strong> : elle choisit quand montrer la carte du monde, l'image du lieu ou le plan de combat, pour mettre les meilleures scènes aux bons endroits.</p>
+    <div class="levels">
+      <div class="level"><div class="n">1</div><h3>La carte du monde</h3><p>Où est le groupe. On voyage de lieu en lieu par des routes : « Port-Brume → Valcendre, 2 jours à pied ».</p></div>
+      <div class="level"><div class="n">2</div><h3>L'image du lieu</h3><p>La ville, l'auberge, la forêt. Pour l'ambiance, pendant le récit.</p></div>
+      <div class="level"><div class="n">3</div><h3>Le plan de la scène</h3><p>Le plan de l'auberge avec une grille et des jetons pour chaque héros et adversaire.</p></div>
+    </div>
+    <div class="rule"><strong>Déplacements limités, comme dans D&amp;D :</strong> un personnage parcourt 9 m par tour, soit 6 cases de 1,5 m. Il ne peut donc pas toujours atteindre l'ennemi ni tout faire en un tour. Chaque héros a ses caractéristiques (Force, Dextérité…) et ses compétences ; les dés décident.</div>
+    <p><strong>Le principe clé :</strong> le jeu applique les règles (dés, déplacements, points de vie), l'IA raconte. Elle ne peut ni tricher ni oublier une règle.</p>
+    <h3 style="margin-top:1.2rem">Un tour de jeu, en exemple</h3>
+    <ol class="turn">
+      <li>L'IA décrit : « La porte de l'auberge s'ouvre, trois brigands entrent. » L'image de l'auberge s'affiche.</li>
+      <li>La tension monte : l'IA sort le plan, avec les jetons des héros et des brigands.</li>
+      <li>Le joueur de Kaelen choisit « Attaquer le chef ». Le jeu montre les 6 cases qu'il peut atteindre, vérifie la distance et lance le dé (d20 + bonus, contre la classe d'armure du brigand).</li>
+      <li>Le jeu donne le résultat (touché, 7 dégâts). L'IA le raconte et fait réagir le chef.</li>
+    </ol>
+    <h3 style="margin-top:1.2rem">Ce qu'on reprend d'ailleurs</h3>
+    <p><strong>Règles :</strong> D&amp;D 5e allégée, à partir des règles libres (SRD 5.1 et 5.2, licence CC-BY 4.0, réutilisables en citant la source). Les livres complets servent de référence ; on n'en copie pas le texte.</p>
+    <p><strong>aiga_</strong> (jeu de rôle IA en ligne) : la mémoire de chaque personnage, les traits gagnés en jouant, le carnet de partie, 3 choix proposés plus le texte libre.</p>
+    <p><strong>Ni Warhammer ni D&amp;D</strong> dans le nom ou l'univers : ce sont des marques. On crée notre monde.</p>
+
+    <h3 style="margin-top:1.4rem">Les références de Wesley</h3>
+    <p class="lede" style="font-size:1rem">Des MJ qui jouent en ligne avec un plan, des jetons, des portraits et des dés à l'écran.</p>
+    <div class="refs">
+      <figure><img src="references/04-auberge-isometrique-portraits.jpg" alt="Plan d'auberge dessiné en perspective, jetons colorés, portraits des 5 héros en bas, jet de dé à droite" loading="lazy"><figcaption>Auberge en perspective : jetons de couleur, portraits des héros, jet de dé affiché.</figcaption></figure>
+      <figure><img src="references/05-auberge-jetons-et-joueurs.jpg" alt="Plan d'auberge avec jetons, portraits des joueurs sur le côté" loading="lazy"><figcaption>Le même lieu, portraits des joueurs sur le côté.</figcaption></figure>
+      <figure><img src="references/01-combat-vue-de-dessus.jpg" alt="Combat vu de dessus avec barres de vie au-dessus des ennemis et noms des 10 personnages en bas" loading="lazy"><figcaption>Combat vu de dessus : barres de vie, noms des personnages, nombre de réussites.</figcaption></figure>
+      <figure><img src="references/03-vehicules-et-jet-de-des.jpg" alt="Véhicules sur une carte enneigée, résultat d'un jet de 6 dés, portraits des 9 personnages" loading="lazy"><figcaption>Jet de 6 dés : le détail de chaque dé et le nombre de réussites.</figcaption></figure>
+      <figure><img src="references/02-combat-plusieurs-zones.jpg" alt="Grande scène de combat vue de dessus sur plusieurs zones" loading="lazy"><figcaption>Une grande scène sur plusieurs zones.</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="questions">
+    <h2 id="questions">Les décisions à prendre</h2>
+    <p>Coche une réponse par question. L'étiquette <span class="star">Conseil de Claude</span> indique une recommandation, pas une décision. Tes réponses s'enregistrent toutes seules ; celles des autres apparaissent sous chaque question.</p>
+    <div class="tools">
+      <button class="btn" type="button" id="fill-reco">Cocher les conseils là où je n'ai rien coché</button>
+    </div>
+    <div id="qlist"><p class="empty">Chargement des questions…</p></div>
+  </section>
+
+  <section aria-labelledby="synthese">
+    <h2 id="synthese">Synthèse</h2>
+    <p>Les réponses de chacun côte à côte. En vert : vous êtes d'accord.</p>
+    <div class="tablewrap"><table id="synth"><tbody><tr><td class="empty">Aucune réponse pour l'instant.</td></tr></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="envoyer">
+    <h2 id="envoyer">Envoyer mes réponses autrement</h2>
+    <p>Si l'enregistrement ne marche pas chez toi, copie ce texte et envoie-le à Wesley (WhatsApp, mail…).</p>
+    <button class="btn solid" type="button" id="copy">Copier mes réponses</button>
+    <span id="copy-status" class="status" style="margin-left:10px"></span>
+    <textarea id="copy-text" class="copybox" readonly aria-label="Mes réponses en texte"></textarea>
+  </section>
+
+  <footer>Règles de référence : D&amp;D SRD 5.1 / 5.2 (Wizards of the Coast, CC-BY 4.0). Captures : streams de JDR en ligne, pour illustration seulement.</footer>
+</div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  let Q = null;                 // questions.json
+  let me = {prenom:"", choix:{}, notes:{}};
+  let myId = null, db = null, myRef = null;
+  let all = {};                 // id -> doc data
+  let saveTimer = null, saving = false, pending = false;
+
+  function store(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+  function load(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } }
+  const local = load("jdr-mes-reponses"); if (local && typeof local === "object") me = Object.assign(me, local);
+
+  function setStatus(t, cls){ const s=$("#status"); s.textContent=t; s.className="status"+(cls?" "+cls:""); }
+
+  function questions(){ const out=[]; if(!Q) return out; Q.sections.forEach(s=>s.questions.forEach(q=>out.push(q))); return out; }
+  function labelOf(q, id){ if(!id) return ""; const o=(q.options||[]).find(o=>o.id===id); return o?o.label:""; }
+
+  function renderWho(){
+    document.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.name===me.prenom)));
+    const isOther = me.prenom && !["Wesley","Greg"].includes(me.prenom);
+    $("#who-other").value = isOther ? me.prenom : "";
+  }
+
+  function renderQuestions(){
+    const root = $("#qlist"); root.textContent = "";
+    let n = 0;
+    Q.sections.forEach(sec=>{
+      const h = document.createElement("h3"); h.textContent = sec.titre; h.style.marginTop="1.8rem"; h.style.color="var(--accent)";
+      root.appendChild(h);
+      sec.questions.forEach(q=>{
+        n++;
+        const card = document.createElement("article"); card.className="q"; card.id=q.id;
+        const t = document.createElement("h3");
+        const num = document.createElement("span"); num.className="num"; num.textContent = n+".";
+        const tt = document.createElement("span"); tt.textContent = q.titre;
+        t.append(num, tt); card.appendChild(t);
+        if (q.type === "texte"){
+          const p = document.createElement("p"); p.className="why"; p.style.borderColor="var(--line)"; p.textContent = q.aide; card.appendChild(p);
+        } else {
+          const box = document.createElement("div"); box.className="opts"; box.setAttribute("role","radiogroup"); box.setAttribute("aria-label", q.titre);
+          q.options.forEach(o=>{
+            const lab = document.createElement("label"); lab.className="opt";
+            const r = document.createElement("input"); r.type="radio"; r.name=q.id; r.value=o.id; r.id=q.id+"-"+o.id;
+            r.checked = me.choix[q.id]===o.id;
+            r.addEventListener("change", ()=>{ me.choix[q.id]=o.id; changed(); });
+            const l = document.createElement("span"); l.className="lab"; l.textContent=o.label;
+            if (o.reco){ const s=document.createElement("span"); s.className="star"; s.textContent="Conseil de Claude"; l.appendChild(s); }
+            lab.append(r, l);
+            if (o.detail){ const d=document.createElement("span"); d.className="det"; d.textContent=o.detail; lab.appendChild(d); }
+            box.appendChild(lab);
+          });
+          card.appendChild(box);
+          const why = document.createElement("p"); why.className="why"; why.textContent = "Conseil de Claude : " + q.pourquoi; card.appendChild(why);
+        }
+        const ta = document.createElement("textarea"); ta.className="note"; ta.id=q.id+"-note";
+        ta.placeholder = q.type==="texte" ? "Ta réponse…" : "Un commentaire, une autre idée ? (facultatif)";
+        ta.setAttribute("aria-label", "Commentaire, question "+n);
+        ta.value = me.notes[q.id] || "";
+        ta.addEventListener("input", ()=>{ me.notes[q.id]=ta.value; changed(); });
+        card.appendChild(ta);
+        const others = document.createElement("div"); others.className="others"; others.id=q.id+"-others";
+        card.appendChild(others);
+        root.appendChild(card);
+      });
+    });
+  }
+
+  function otherDocs(){ return Object.entries(all).filter(([id,d])=>id!==myId && d && d.prenom); }
+
+  function renderOthers(){
+    if(!Q) return;
+    questions().forEach(q=>{
+      const box = document.getElementById(q.id+"-others"); if(!box) return;
+      box.textContent="";
+      otherDocs().forEach(([id,d])=>{
+        const c = d.choix && d.choix[q.id], note = d.notes && d.notes[q.id];
+        if(!c && !note) return;
+        const div = document.createElement("div"); div.className="other";
+        const b = document.createElement("b"); b.textContent = d.prenom + " : ";
+        div.appendChild(b);
+        div.appendChild(document.createTextNode(c ? labelOf(q,c) : ""));
+        if (c && me.choix[q.id]===c){ const a=document.createElement("span"); a.className="agree"; a.textContent="  · d'accord avec toi"; div.appendChild(a); }
+        if (note){ const i=document.createElement("div"); i.textContent = "« "+note+" »"; i.style.marginTop="2px"; div.appendChild(i); }
+        box.appendChild(div);
+      });
+    });
+  }
+
+  function renderSynth(){
+    if(!Q) return;
+    const people = [];
+    if (me.prenom) people.push({prenom:me.prenom, d:me});
+    otherDocs().forEach(([id,d])=>people.push({prenom:d.prenom, d}));
+    const tb = $("#synth"); tb.textContent="";
+    if (!people.length){ const tr=tb.insertRow(); const td=tr.insertCell(); td.className="empty"; td.textContent="Aucune réponse pour l'instant."; return; }
+    const th = tb.createTHead().insertRow();
+    ["Question", ...people.map(p=>p.prenom)].forEach(t=>{ const c=document.createElement("th"); c.textContent=t; th.appendChild(c); });
+    const body = tb.createTBody();
+    questions().forEach((q,i)=>{
+      const tr = body.insertRow();
+      const c0 = tr.insertCell(); c0.textContent = (i+1)+". "+q.titre;
+      const vals = people.map(p=> q.type==="texte" ? (p.d.notes||{})[q.id]||"" : (p.d.choix||{})[q.id]||"");
+      const same = q.type!=="texte" && people.length>1 && vals.every(v=>v && v===vals[0]);
+      people.forEach((p,j)=>{
+        const td = tr.insertCell();
+        td.textContent = q.type==="texte" ? (vals[j]||"—") : (labelOf(q, vals[j]) || "—");
+        if (same) td.className="same";
+      });
+    });
+  }
+
+  function markdown(){
+    if(!Q) return "";
+    const L = ["Réponses de "+(me.prenom||"?")+" — Notre JDR avec MJ IA", ""];
+    questions().forEach((q,i)=>{
+      L.push((i+1)+". "+q.titre);
+      if (q.type!=="texte") L.push("   → "+(labelOf(q, me.choix[q.id])||"(pas répondu)"));
+      if (me.notes[q.id]) L.push("   « "+me.notes[q.id]+" »");
+    });
+    return L.join("\n");
+  }
+
+  function renderAll(){ renderOthers(); renderSynth(); $("#copy-text").value = markdown(); }
+
+  function changed(){
+    store("jdr-mes-reponses", me);
+    renderAll();
+    if (!me.prenom){ setStatus("Choisis ton prénom pour enregistrer.", "warn"); return; }
+    if (!myRef){ setStatus("Gardé sur cet appareil. Utilise « Copier mes réponses » pour les envoyer.", "warn"); return; }
+    setStatus("Enregistrement…");
+    clearTimeout(saveTimer); saveTimer = setTimeout(save, 800);
+  }
+
+  async function save(){
+    if (saving){ pending = true; return; }
+    saving = true;
+    try{
+      await myRef.set({prenom: me.prenom, choix: me.choix, notes: me.notes, maj: Date.now()});
+      setStatus("Enregistré", "ok");
+    }catch(e){
+      setStatus("Pas enregistré : tu n'as peut-être pas le droit d'écrire ici. Demande à Wesley l'accès « peut contribuer », ou copie tes réponses en bas.", "warn");
+    }finally{
+      saving = false;
+      if (pending){ pending = false; save(); }
+    }
+  }
+
+  document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click", ()=>{ me.prenom=b.dataset.name; renderWho(); changed(); }));
+  $("#who-other").addEventListener("change", e=>{ const v=e.target.value.trim(); if(v){ me.prenom=v.slice(0,30); renderWho(); changed(); } });
+
+  $("#fill-reco").addEventListener("click", ()=>{
+    questions().forEach(q=>{ if(q.type!=="texte" && !me.choix[q.id]){ const o=q.options.find(o=>o.reco); if(o) me.choix[q.id]=o.id; } });
+    renderQuestions(); changed();
+  });
+
+  $("#copy").addEventListener("click", ()=>{
+    const t = markdown(); const box=$("#copy-text"); box.value=t;
+    const done = ()=>{ $("#copy-status").textContent="Copié"; $("#copy-status").className="status ok"; };
+    try{
+      navigator.clipboard.writeText(t).then(done, ()=>{ box.focus(); box.select(); $("#copy-status").textContent="Sélectionné : fais Copier"; });
+    }catch(e){ box.focus(); box.select(); $("#copy-status").textContent="Sélectionné : fais Copier"; }
+  });
+
+  fetch("questions.json").then(r=>r.json()).then(j=>{ Q=j; renderWho(); renderQuestions(); renderAll(); })
+    .catch(()=>{ $("#qlist").textContent="Impossible de charger les questions. Recharge la page."; });
+
+  renderWho();
+
+  (async ()=>{
+    if (!window.claude || !window.claude.use) return;
+    const [d, u] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    if (!d || !u){ if (me.prenom) setStatus("Gardé sur cet appareil. Copie tes réponses en bas pour les envoyer.", "warn"); return; }
+    const id = await u.id();
+    if (!id){ return; }
+    db = d; myId = id; myRef = db.collection("reponses").doc(id);
+    const timer = setTimeout(()=>{ if(!Object.keys(all).length) setStatus(me.prenom ? "Lecture des réponses lente… tes réponses restent gardées ici." : "Choisis ton prénom pour commencer."); }, 10000);
+    let first = true;
+    db.collection("reponses").onSnapshot(snap=>{
+      clearTimeout(timer);
+      const next = {};
+      snap.docs.forEach(s=>{ const v=s.data(); if (v) next[s.id]=v; });
+      all = next;
+      if (first){
+        first = false;
+        const mine = all[myId];
+        if (mine && mine.prenom){
+          // la version enregistrée gagne, sauf ce qui n'existe que sur cet appareil
+          me = {prenom: mine.prenom, choix: Object.assign({}, me.choix, mine.choix||{}), notes: Object.assign({}, me.notes, mine.notes||{})};
+          store("jdr-mes-reponses", me);
+          if (Q){ renderWho(); renderQuestions(); }
+          setStatus("Enregistré", "ok");
+        } else if (me.prenom){ changed(); }
+      }
+      renderAll();
+    }, ()=>{ clearTimeout(timer); setStatus("Impossible de lire les réponses des autres. Tes réponses restent sur cet appareil.", "warn"); });
+  })();
+})();
+</script>

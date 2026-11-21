@@ -1,6 +1,6 @@
 # Rpg
 
-Dépôt de travail sur les jeux de rôle pilotés par IA.
+Dépôt de travail sur les jeux de rôle pilotés par IA, et sur **notre propre JDR avec un MJ IA** (`docs/jdr/`).
 Point de départ : l'analyse de **aiga_** (https://www.aiga.io), une plateforme de RPG textuels
 avec un maître du jeu IA, relevée le 2026-11-20.
 
@@ -16,6 +16,7 @@ avec un maître du jeu IA, relevée le 2026-11-20.
 | `docs/aiga/mondes-francais.md` | L'écran « Choisissez votre monde » (filtres, fiche monde) et les 21 mondes en français |
 | `docs/aiga/mondes-partages.md` | Les mondes publiés par les joueurs, avec liens, mode et style graphique |
 | `docs/idees-pour-nos-jeux.md` | Ce qu'on peut reprendre comme mécaniques pour nos propres jeux (dont Braisemont) |
+| `docs/jdr/cahier-de-decisions.md` | **Notre JDR avec MJ IA** : la vision et 23 décisions à prendre avec Greg (page interactive : https://claude.ai/artifact/QFyZ1RVBpDr2maw4NXFRCm) |
 | `docs/sources.md` | Les pages lues et ce qui n'a pas pu l'être |
 
 ## Règles du dépôt
