@@ -1,147 +1,765 @@
 {
-  "titre": "Notre JDR avec MJ IA",
-  "date": "2026-11-21",
-  "sections": [
+ "titre": "Notre JDR avec MJ IA",
+ "date": "2026-11-21",
+ "sections": [
+  {
+   "id": "experience",
+   "titre": "L'expérience de jeu",
+   "questions": [
     {
-      "id": "experience",
-      "titre": "L'expérience de jeu",
-      "questions": [
-        {"id": "q01", "titre": "Qui joue, et comment ?", "options": [
-          {"id": "a", "label": "Un seul écran partagé (PC ou TV), les joueurs autour", "detail": "Comme une vraie table : un appareil, on dit ses actions, une personne les tape. Le plus simple à construire.", "reco": true},
-          {"id": "b", "label": "En ligne, chacun sur son appareil", "detail": "Plus moderne, mais il faut synchroniser tout le monde en direct : bien plus de travail."},
-          {"id": "c", "label": "Solo avec le MJ IA", "detail": "Le plus simple, mais on perd le côté soirée entre amis."}
-        ], "pourquoi": "On commence par l'écran partagé : c'est l'esprit des parties des captures de référence, et ça évite la synchronisation. Le jeu en ligne viendra après."},
-        {"id": "q02", "titre": "Sur quel appareil ?", "options": [
-          {"id": "a", "label": "Une page web pensée en paysage (PC, tablette, TV), lisible au téléphone", "detail": "Rien à installer, marche partout.", "reco": true},
-          {"id": "b", "label": "Une application téléphone", "detail": "Écran trop petit pour une carte et des jetons."},
-          {"id": "c", "label": "Un logiciel PC", "detail": "À installer, moins facile à partager."}
-        ], "pourquoi": "Le plan de combat a besoin de place : le paysage s'impose. Le web évite toute installation."},
-        {"id": "q03", "titre": "Quel univers ?", "options": [
-          {"id": "a", "label": "Notre propre monde de fantasy médiévale", "detail": "Les règles libres de D&D sont pensées pour ça.", "reco": true},
-          {"id": "b", "label": "Plusieurs univers au choix (fantasy, science-fiction, moderne)", "detail": "Plus riche, mais chaque univers demande ses images et ses règles."},
-          {"id": "c", "label": "Notre propre science-fiction", "detail": "Il faudrait adapter les règles."}
-        ], "pourquoi": "Warhammer et D&D sont des marques protégées : on crée notre monde. La fantasy colle aux règles qu'on reprend."},
-        {"id": "q04", "titre": "Durée d'une séance ?", "options": [
-          {"id": "a", "label": "30 minutes", "detail": "Une scène, idéal pour tester."},
-          {"id": "b", "label": "1 à 2 heures", "detail": "Une soirée, une aventure courte.", "reco": true},
-          {"id": "c", "label": "3 heures et plus", "detail": "Campagne façon stream."}
-        ], "pourquoi": "1 à 2 heures tient dans une soirée et garde le coût IA raisonnable."}
-      ]
+     "id": "q01",
+     "titre": "Qui joue, et comment ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Un seul écran partagé (PC ou TV), les joueurs autour",
+       "detail": "Comme une vraie table : un appareil, on dit ses actions, une personne les tape. Le plus simple à construire.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "En ligne, chacun sur son appareil",
+       "detail": "Plus moderne, mais il faut synchroniser tout le monde en direct : bien plus de travail."
+      },
+      {
+       "id": "c",
+       "label": "Solo avec le MJ IA",
+       "detail": "Le plus simple, mais on perd le côté soirée entre amis."
+      }
+     ],
+     "pourquoi": "On commence par l'écran partagé : c'est l'esprit des parties des captures de référence, et ça évite la synchronisation. Le jeu en ligne viendra après."
     },
     {
-      "id": "regles",
-      "titre": "Les règles",
-      "questions": [
-        {"id": "q05", "titre": "Sur quelles règles on se base ?", "options": [
-          {"id": "a", "label": "D&D 5e allégée (règles libres SRD) + les bonnes idées d'aiga_", "detail": "Dé à 20 faces, 6 caractéristiques, compétences, classe d'armure, points de vie, avantage/désavantage. Plus : mémoire des personnages, traits gagnés en jouant, carnet de partie.", "reco": true},
-          {"id": "b", "label": "D&D 5e complète", "detail": "Toutes les classes et tous les sorts : très lourd à coder."},
-          {"id": "c", "label": "Un système maison simple (dé à 100)", "detail": "Rapide à faire, mais on réinvente tout."}
-        ], "pourquoi": "Les règles libres de D&D (SRD 5.1 et 5.2, licence CC-BY 4.0) peuvent être reprises légalement en citant la source. Les livres complets, non."},
-        {"id": "q06", "titre": "Qui lance les dés ?", "options": [
-          {"id": "a", "label": "Le jeu lance, avec des dés animés à l'écran", "detail": "Impossible de tricher, tout le monde voit le résultat.", "reco": true},
-          {"id": "b", "label": "Les joueurs lancent de vrais dés et tapent le résultat", "detail": "Plus de sensations à la table, plus lent."},
-          {"id": "c", "label": "Au choix de la table", "detail": "Les deux modes."}
-        ], "pourquoi": "Le code lance pour que l'IA ne puisse jamais inventer un résultat. Les vrais dés peuvent venir en option."},
-        {"id": "q07", "titre": "Création des personnages ?", "options": [
-          {"id": "a", "label": "Personnages prêts à jouer (prétirés) pour commencer", "detail": "On choisit parmi 4 ou 5 héros et on joue tout de suite.", "reco": true},
-          {"id": "b", "label": "Création guidée complète (race, classe, caractéristiques)", "detail": "Riche mais long à coder et à faire en séance."},
-          {"id": "c", "label": "L'IA crée le héros à partir d'une description", "detail": "Rapide, mais moins de contrôle."}
-        ], "pourquoi": "Les prétirés suffisent pour le premier prototype. La création complète viendra quand les règles seront stables."}
-      ]
+     "id": "q02",
+     "titre": "Sur quel appareil ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Une page web pensée en paysage (PC, tablette, TV), lisible au téléphone",
+       "detail": "Rien à installer, marche partout.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Une application téléphone",
+       "detail": "Écran trop petit pour une carte et des jetons."
+      },
+      {
+       "id": "c",
+       "label": "Un logiciel PC",
+       "detail": "À installer, moins facile à partager."
+      }
+     ],
+     "pourquoi": "Le plan de combat a besoin de place : le paysage s'impose. Le web évite toute installation."
     },
     {
-      "id": "cartes",
-      "titre": "Les cartes et les déplacements",
-      "questions": [
-        {"id": "q08", "titre": "Combien de niveaux de carte ?", "options": [
-          {"id": "a", "label": "3 niveaux : carte du monde → image du lieu → plan de la scène", "detail": "Le monde (où on est), la ville ou la forêt (l'ambiance), le plan de l'auberge avec les jetons (l'action).", "reco": true},
-          {"id": "b", "label": "2 niveaux : carte du monde → plan de la scène", "detail": "Moins d'images, moins d'ambiance."},
-          {"id": "c", "label": "Juste des illustrations, sans plan", "detail": "Le plus simple, mais pas de déplacements mesurés."}
-        ], "pourquoi": "C'est exactement la vision de Wesley : on situe le groupe, on montre le lieu, puis on passe au plan quand il faut agir."},
-        {"id": "q09", "titre": "Comment on voyage sur la carte du monde ?", "options": [
-          {"id": "a", "label": "Des routes entre les lieux, chacune avec une durée en jours", "detail": "Ex. : Port-Brume → Valcendre, 2 jours à pied, 1 à cheval. L'IA raconte les rencontres en chemin.", "reco": true},
-          {"id": "b", "label": "Déplacement libre avec une distance maximale par jour", "detail": "À pied, rythme normal : environ 38 km par jour (règles D&D). Plus libre, plus dur à gérer."},
-          {"id": "c", "label": "L'IA décide des trajets", "detail": "Risque d'incohérences."}
-        ], "pourquoi": "Des routes avec une durée restent cohérentes et simples. On garde les distances de D&D pour calculer ces durées."},
-        {"id": "q10", "titre": "Le plan de la scène : quelle grille ?", "options": [
-          {"id": "a", "label": "Des cases carrées de 1,5 m", "detail": "La règle D&D : un personnage se déplace de 9 m par tour, soit 6 cases. Il ne peut donc pas toujours atteindre l'ennemi.", "reco": true},
-          {"id": "b", "label": "Des hexagones", "detail": "Plus juste pour les diagonales, plus rare en D&D."},
-          {"id": "c", "label": "Sans grille, mesure libre", "detail": "Plus joli, plus dur à calculer et à afficher."}
-        ], "pourquoi": "Les cases rendent la portée de chaque personnage visible et facile à vérifier par le code."},
-        {"id": "q11", "titre": "Le plan vu comment ?", "options": [
-          {"id": "a", "label": "Vu de dessus", "detail": "Comme les captures Warhammer : simple à dessiner et à calculer.", "reco": true},
-          {"id": "b", "label": "En perspective (isométrique)", "detail": "Comme les captures de l'auberge D&D : très beau, mais les déplacements et les images sont plus durs à faire."},
-          {"id": "c", "label": "Pas de plan", "detail": "Tout se joue dans l'imagination."}
-        ], "pourquoi": "On commence vu de dessus pour que le jeu marche. L'isométrique pourra habiller certains lieux plus tard."},
-        {"id": "q12", "titre": "Quand le plan apparaît-il ?", "options": [
-          {"id": "a", "label": "Seulement pour les combats et les scènes tendues", "detail": "Le reste du temps : récit et illustration.", "reco": true},
-          {"id": "b", "label": "Tout le temps", "detail": "Chaque lieu a son plan."},
-          {"id": "c", "label": "Jamais", "detail": ""}
-        ], "pourquoi": "C'est ce que font les MJ en vrai : le plan sort quand la position compte."}
-      ]
+     "id": "q03",
+     "titre": "Quel univers ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Notre propre monde de fantasy médiévale",
+       "detail": "Les règles libres de D&D sont pensées pour ça.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Plusieurs univers au choix (fantasy, science-fiction, moderne)",
+       "detail": "Plus riche, mais chaque univers demande ses images et ses règles."
+      },
+      {
+       "id": "c",
+       "label": "Notre propre science-fiction",
+       "detail": "Il faudrait adapter les règles."
+      }
+     ],
+     "pourquoi": "Warhammer et D&D sont des marques protégées : on crée notre monde. La fantasy colle aux règles qu'on reprend."
     },
     {
-      "id": "images",
-      "titre": "Les images",
-      "questions": [
-        {"id": "q13", "titre": "D'où viennent les images ?", "options": [
-          {"id": "a", "label": "Un mélange : cartes et plans préparés à l'avance, illustrations de scène par l'IA", "detail": "Les plans doivent être précis (cases, murs) : on les prépare. Les ambiances peuvent être générées.", "reco": true},
-          {"id": "b", "label": "Tout généré par l'IA pendant la partie", "detail": "Coûte cher, lent, et un plan généré n'a pas de cases fiables."},
-          {"id": "c", "label": "Tout préparé à la main", "detail": "Beau et fiable, mais limite les aventures."}
-        ], "pourquoi": "Une image générée coûte et prend du temps ; une bibliothèque réutilisable rend le jeu rapide et cohérent."},
-        {"id": "q14", "titre": "Quel style graphique ?", "options": [
-          {"id": "a", "label": "Dessin à l'encre et au crayon, ton sépia", "detail": "Comme les captures de l'auberge : élégant, et il pardonne les petites incohérences des images IA.", "reco": true},
-          {"id": "b", "label": "Peinture réaliste", "detail": "Spectaculaire, mais le moindre défaut se voit."},
-          {"id": "c", "label": "BD / dessin animé", "detail": "Plus léger, plus familial."},
-          {"id": "d", "label": "Pixel art", "detail": "Rétro, facile à animer."}
-        ], "pourquoi": "Un seul style pour tout le jeu, sinon les images ne vont pas ensemble."},
-        {"id": "q15", "titre": "À quoi ressemblent les jetons ?", "options": [
-          {"id": "a", "label": "Un portrait rond, entouré de la couleur du joueur", "detail": "On reconnaît son héros d'un coup d'œil.", "reco": true},
-          {"id": "b", "label": "Une figurine dessinée vue de dessus", "detail": "Comme les captures Warhammer."},
-          {"id": "c", "label": "Une pastille de couleur avec une initiale", "detail": "Le plus simple."}
-        ], "pourquoi": "Le portrait sert aussi dans la barre des personnages en bas de l'écran, comme sur les captures."}
-      ]
-    },
-    {
-      "id": "mj",
-      "titre": "Le MJ IA",
-      "questions": [
-        {"id": "q16", "titre": "Que fait l'IA exactement ?", "options": [
-          {"id": "a", "label": "Elle raconte et met en scène ; le code gère les règles", "detail": "L'IA choisit le lieu, l'image, le moment où sortir le plan, joue les personnages. Le code calcule dés, déplacements, points de vie.", "reco": true},
-          {"id": "b", "label": "Elle raconte seulement", "detail": "La mise en scène est fixée à l'avance."},
-          {"id": "c", "label": "Elle fait tout, règles comprises", "detail": "Elle finira par se tromper ou tricher."}
-        ], "pourquoi": "C'est la demande de Wesley : un narrateur qui met les bonnes scènes au bon endroit, sans pouvoir fausser les règles."},
-        {"id": "q17", "titre": "Comment les joueurs agissent ?", "options": [
-          {"id": "a", "label": "Texte libre + 3 choix proposés", "detail": "On clique pour aller vite, on écrit pour être créatif.", "reco": true},
-          {"id": "b", "label": "Seulement des choix proposés", "detail": "Rapide mais limité."},
-          {"id": "c", "label": "Seulement du texte (ou la voix)", "detail": "Libre mais plus lent à table."}
-        ], "pourquoi": "aiga_ fait ainsi et ça marche : les deux modes se complètent."},
-        {"id": "q18", "titre": "De quoi l'IA se souvient ?", "options": [
-          {"id": "a", "label": "Un carnet de partie + la mémoire de chaque personnage", "detail": "Lieux visités, alliés et ennemis, promesses faites. Un aubergiste se souvient de la bagarre.", "reco": true},
-          {"id": "b", "label": "Un simple résumé de la partie", "detail": "Plus facile, moins vivant."},
-          {"id": "c", "label": "Rien d'une séance à l'autre", "detail": ""}
-        ], "pourquoi": "C'est ce qui rend aiga_ marquant, et c'est faisable par étapes."}
-      ]
-    },
-    {
-      "id": "projet",
-      "titre": "Le projet",
-      "questions": [
-        {"id": "q19", "titre": "Le tout premier prototype ?", "options": [
-          {"id": "a", "label": "« Une soirée à l'auberge » : 1 ville, 1 auberge, 4 héros prétirés, 1 bagarre sur le plan", "detail": "Teste en une fois : carte du monde, image du lieu, plan, jetons, déplacements, dés, MJ IA.", "reco": true},
-          {"id": "b", "label": "Une quête courte complète (voyage + donjon + boss)", "detail": "Plus ambitieux : plusieurs semaines avant de jouer."},
-          {"id": "c", "label": "Seulement la carte du monde et le voyage", "detail": "Ne teste pas le combat."}
-        ], "pourquoi": "Petit, mais il touche à tout : on saura vite si la formule plaît."},
-        {"id": "q20", "titre": "Budget IA par mois ?", "options": [
-          {"id": "a", "label": "0 € : modèles gratuits ou sur le serveur de Wesley", "detail": "Possible, mais images et récit de moindre qualité."},
-          {"id": "b", "label": "Jusqu'à 20 € pour le prototype", "detail": "Suffit pour tester à quelques-uns.", "reco": true},
-          {"id": "c", "label": "Jusqu'à 50 €", "detail": "Confortable, avec beaucoup d'images."},
-          {"id": "d", "label": "Plus", "detail": ""}
-        ], "pourquoi": "Le récit coûte peu ; ce sont surtout les images générées qui coûtent. On mesure pendant le prototype."},
-        {"id": "q21", "titre": "Qui fait quoi ? (Greg : qu'est-ce qui te plairait ?)", "type": "texte", "aide": "Ex. : l'univers et ses lieux, les scénarios, les règles, les illustrations, les tests à la table…"},
-        {"id": "q22", "titre": "Un nom pour le jeu ?", "type": "texte", "aide": "Une idée, même provisoire."},
-        {"id": "q23", "titre": "Autre chose ? Une idée, une inquiétude, une référence ?", "type": "texte", "aide": "Un jeu, un stream, une mécanique que tu aimes."}
-      ]
+     "id": "q04",
+     "titre": "Durée d'une séance ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "30 minutes",
+       "detail": "Une scène, idéal pour tester."
+      },
+      {
+       "id": "b",
+       "label": "1 à 2 heures",
+       "detail": "Une soirée, une aventure courte.",
+       "reco": true
+      },
+      {
+       "id": "c",
+       "label": "3 heures et plus",
+       "detail": "Campagne façon stream."
+      }
+     ],
+     "pourquoi": "1 à 2 heures tient dans une soirée et garde le coût IA raisonnable."
     }
-  ]
+   ]
+  },
+  {
+   "id": "regles",
+   "titre": "Les règles",
+   "questions": [
+    {
+     "id": "q05",
+     "titre": "Sur quelles règles on se base ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "D&D 5e allégée (règles libres SRD) + les bonnes idées d'aiga_",
+       "detail": "Dé à 20 faces, 6 caractéristiques, compétences, classe d'armure, points de vie, avantage/désavantage. Plus : mémoire des personnages, traits gagnés en jouant, carnet de partie.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "D&D 5e complète",
+       "detail": "Toutes les classes et tous les sorts : très lourd à coder."
+      },
+      {
+       "id": "c",
+       "label": "Un système maison simple (dé à 100)",
+       "detail": "Rapide à faire, mais on réinvente tout."
+      }
+     ],
+     "pourquoi": "Les règles libres de D&D (SRD 5.1 et 5.2, licence CC-BY 4.0) peuvent être reprises légalement en citant la source. Les livres complets, non."
+    },
+    {
+     "id": "q06",
+     "titre": "Qui lance les dés ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Le jeu lance, avec des dés animés à l'écran",
+       "detail": "Impossible de tricher, tout le monde voit le résultat.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Les joueurs lancent de vrais dés et tapent le résultat",
+       "detail": "Plus de sensations à la table, plus lent."
+      },
+      {
+       "id": "c",
+       "label": "Au choix de la table",
+       "detail": "Les deux modes."
+      }
+     ],
+     "pourquoi": "Le code lance pour que l'IA ne puisse jamais inventer un résultat. Les vrais dés peuvent venir en option."
+    },
+    {
+     "id": "q07",
+     "titre": "Création des personnages ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Personnages prêts à jouer (prétirés) pour commencer",
+       "detail": "On choisit parmi 4 ou 5 héros et on joue tout de suite.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Création guidée complète (race, classe, caractéristiques)",
+       "detail": "Riche mais long à coder et à faire en séance."
+      },
+      {
+       "id": "c",
+       "label": "L'IA crée le héros à partir d'une description",
+       "detail": "Rapide, mais moins de contrôle."
+      }
+     ],
+     "pourquoi": "Les prétirés suffisent pour le premier prototype. La création complète viendra quand les règles seront stables."
+    }
+   ]
+  },
+  {
+   "id": "cartes",
+   "titre": "Les cartes et les déplacements",
+   "questions": [
+    {
+     "id": "q08",
+     "titre": "Combien de niveaux de carte ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "3 niveaux : carte du monde → image du lieu → plan de la scène",
+       "detail": "Le monde (où on est), la ville ou la forêt (l'ambiance), le plan de l'auberge avec les jetons (l'action).",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "2 niveaux : carte du monde → plan de la scène",
+       "detail": "Moins d'images, moins d'ambiance."
+      },
+      {
+       "id": "c",
+       "label": "Juste des illustrations, sans plan",
+       "detail": "Le plus simple, mais pas de déplacements mesurés."
+      }
+     ],
+     "pourquoi": "C'est exactement la vision de Wesley : on situe le groupe, on montre le lieu, puis on passe au plan quand il faut agir."
+    },
+    {
+     "id": "q09",
+     "titre": "Comment on voyage sur la carte du monde ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Des routes entre les lieux, chacune avec une durée en jours",
+       "detail": "Ex. : Port-Brume → Valcendre, 2 jours à pied, 1 à cheval. L'IA raconte les rencontres en chemin.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Déplacement libre avec une distance maximale par jour",
+       "detail": "À pied, rythme normal : environ 38 km par jour (règles D&D). Plus libre, plus dur à gérer."
+      },
+      {
+       "id": "c",
+       "label": "L'IA décide des trajets",
+       "detail": "Risque d'incohérences."
+      }
+     ],
+     "pourquoi": "Des routes avec une durée restent cohérentes et simples. On garde les distances de D&D pour calculer ces durées."
+    },
+    {
+     "id": "q10",
+     "titre": "Le plan de la scène : quelle grille ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Des cases carrées de 1,5 m",
+       "detail": "La règle D&D : un personnage se déplace de 9 m par tour, soit 6 cases. Il ne peut donc pas toujours atteindre l'ennemi.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Des hexagones",
+       "detail": "Plus juste pour les diagonales, plus rare en D&D."
+      },
+      {
+       "id": "c",
+       "label": "Sans grille, mesure libre",
+       "detail": "Plus joli, plus dur à calculer et à afficher."
+      }
+     ],
+     "pourquoi": "Les cases rendent la portée de chaque personnage visible et facile à vérifier par le code."
+    },
+    {
+     "id": "q11",
+     "titre": "Le plan vu comment ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Vu de dessus",
+       "detail": "Comme les captures Warhammer : simple à dessiner et à calculer.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "En perspective (isométrique)",
+       "detail": "Comme les captures de l'auberge D&D : très beau, mais les déplacements et les images sont plus durs à faire."
+      },
+      {
+       "id": "c",
+       "label": "Pas de plan",
+       "detail": "Tout se joue dans l'imagination."
+      }
+     ],
+     "pourquoi": "On commence vu de dessus pour que le jeu marche. L'isométrique pourra habiller certains lieux plus tard."
+    },
+    {
+     "id": "q12",
+     "titre": "Quand le plan apparaît-il ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Seulement pour les combats et les scènes tendues",
+       "detail": "Le reste du temps : récit et illustration.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Tout le temps",
+       "detail": "Chaque lieu a son plan."
+      },
+      {
+       "id": "c",
+       "label": "Jamais",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "C'est ce que font les MJ en vrai : le plan sort quand la position compte."
+    }
+   ]
+  },
+  {
+   "id": "images",
+   "titre": "Les images",
+   "questions": [
+    {
+     "id": "q13",
+     "titre": "D'où viennent les images ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Un mélange : cartes et plans préparés à l'avance, illustrations de scène par l'IA",
+       "detail": "Les plans doivent être précis (cases, murs) : on les prépare. Les ambiances peuvent être générées.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Tout généré par l'IA pendant la partie",
+       "detail": "Coûte cher, lent, et un plan généré n'a pas de cases fiables."
+      },
+      {
+       "id": "c",
+       "label": "Tout préparé à la main",
+       "detail": "Beau et fiable, mais limite les aventures."
+      }
+     ],
+     "pourquoi": "Une image générée coûte et prend du temps ; une bibliothèque réutilisable rend le jeu rapide et cohérent."
+    },
+    {
+     "id": "q14",
+     "titre": "Quel style graphique ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Dessin à l'encre et au crayon, ton sépia",
+       "detail": "Comme les captures de l'auberge : élégant, et il pardonne les petites incohérences des images IA.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Peinture réaliste",
+       "detail": "Spectaculaire, mais le moindre défaut se voit."
+      },
+      {
+       "id": "c",
+       "label": "BD / dessin animé",
+       "detail": "Plus léger, plus familial."
+      },
+      {
+       "id": "d",
+       "label": "Pixel art",
+       "detail": "Rétro, facile à animer."
+      }
+     ],
+     "pourquoi": "Un seul style pour tout le jeu, sinon les images ne vont pas ensemble."
+    },
+    {
+     "id": "q15",
+     "titre": "À quoi ressemblent les jetons ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Un portrait rond, entouré de la couleur du joueur",
+       "detail": "On reconnaît son héros d'un coup d'œil.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Une figurine dessinée vue de dessus",
+       "detail": "Comme les captures Warhammer."
+      },
+      {
+       "id": "c",
+       "label": "Une pastille de couleur avec une initiale",
+       "detail": "Le plus simple."
+      }
+     ],
+     "pourquoi": "Le portrait sert aussi dans la barre des personnages en bas de l'écran, comme sur les captures."
+    }
+   ]
+  },
+  {
+   "id": "mj",
+   "titre": "Le MJ IA",
+   "questions": [
+    {
+     "id": "q16",
+     "titre": "Que fait l'IA exactement ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Elle raconte et met en scène ; le code gère les règles",
+       "detail": "L'IA choisit le lieu, l'image, le moment où sortir le plan, joue les personnages. Le code calcule dés, déplacements, points de vie.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Elle raconte seulement",
+       "detail": "La mise en scène est fixée à l'avance."
+      },
+      {
+       "id": "c",
+       "label": "Elle fait tout, règles comprises",
+       "detail": "Elle finira par se tromper ou tricher."
+      }
+     ],
+     "pourquoi": "C'est la demande de Wesley : un narrateur qui met les bonnes scènes au bon endroit, sans pouvoir fausser les règles."
+    },
+    {
+     "id": "q17",
+     "titre": "Comment les joueurs agissent ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Texte libre + 3 choix proposés",
+       "detail": "On clique pour aller vite, on écrit pour être créatif.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Seulement des choix proposés",
+       "detail": "Rapide mais limité."
+      },
+      {
+       "id": "c",
+       "label": "Seulement du texte (ou la voix)",
+       "detail": "Libre mais plus lent à table."
+      }
+     ],
+     "pourquoi": "aiga_ fait ainsi et ça marche : les deux modes se complètent."
+    },
+    {
+     "id": "q18",
+     "titre": "De quoi l'IA se souvient ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Un carnet de partie + la mémoire de chaque personnage",
+       "detail": "Lieux visités, alliés et ennemis, promesses faites. Un aubergiste se souvient de la bagarre.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Un simple résumé de la partie",
+       "detail": "Plus facile, moins vivant."
+      },
+      {
+       "id": "c",
+       "label": "Rien d'une séance à l'autre",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "C'est ce qui rend aiga_ marquant, et c'est faisable par étapes."
+    }
+   ]
+  },
+  {
+   "id": "projet",
+   "titre": "Le projet",
+   "questions": [
+    {
+     "id": "q19",
+     "titre": "Le tout premier prototype ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "« Une soirée à l'auberge » : 1 ville, 1 auberge, 4 héros prétirés, 1 bagarre sur le plan",
+       "detail": "Teste en une fois : carte du monde, image du lieu, plan, jetons, déplacements, dés, MJ IA.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Une quête courte complète (voyage + donjon + boss)",
+       "detail": "Plus ambitieux : plusieurs semaines avant de jouer."
+      },
+      {
+       "id": "c",
+       "label": "Seulement la carte du monde et le voyage",
+       "detail": "Ne teste pas le combat."
+      }
+     ],
+     "pourquoi": "Petit, mais il touche à tout : on saura vite si la formule plaît."
+    },
+    {
+     "id": "q20",
+     "titre": "Budget IA par mois ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "0 € : modèles gratuits ou sur le serveur de Wesley",
+       "detail": "Possible, mais images et récit de moindre qualité."
+      },
+      {
+       "id": "b",
+       "label": "Jusqu'à 20 € pour le prototype",
+       "detail": "Suffit pour tester à quelques-uns.",
+       "reco": true
+      },
+      {
+       "id": "c",
+       "label": "Jusqu'à 50 €",
+       "detail": "Confortable, avec beaucoup d'images."
+      },
+      {
+       "id": "d",
+       "label": "Plus",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "Le récit coûte peu ; ce sont surtout les images générées qui coûtent. On mesure pendant le prototype."
+    },
+    {
+     "id": "q21",
+     "titre": "Qui fait quoi ? (Greg : qu'est-ce qui te plairait ?)",
+     "type": "texte",
+     "aide": "Ex. : l'univers et ses lieux, les scénarios, les règles, les illustrations, les tests à la table…"
+    },
+    {
+     "id": "q22",
+     "titre": "Un nom pour le jeu ?",
+     "type": "texte",
+     "aide": "Une idée, même provisoire."
+    },
+    {
+     "id": "q23",
+     "titre": "Autre chose ? Une idée, une inquiétude, une référence ?",
+     "type": "texte",
+     "aide": "Un jeu, un stream, une mécanique que tu aimes."
+    }
+   ]
+  },
+  {
+   "id": "tour2",
+   "titre": "Tour 2 — on tranche (22 nov.)",
+   "questions": [
+    {
+     "id": "t01",
+     "titre": "Jouer en ligne : par quoi on commence ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Un écran central (TV ou PC) + chacun son téléphone comme manette et fiche de personnage",
+       "detail": "Chacun a son appareil (votre choix à tous les deux) et ça donne le mode « ensemble » de Greg.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Chacun chez soi, en direct, dès le prototype",
+       "detail": "Plus de travail : il faut gérer les connexions de chacun."
+      },
+      {
+       "id": "c",
+       "label": "Le mode décalé d'abord",
+       "detail": "Chacun joue quand il peut."
+      }
+     ],
+     "pourquoi": "Vous avez tous les deux choisi « en ligne, chacun son appareil ». L'écran central avec les téléphones le permet dès le prototype, et le jeu à distance en découle."
+    },
+    {
+     "id": "t02",
+     "titre": "Le mode décalé (jouer quand on peut, même 5 minutes) ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Juste après le prototype",
+       "detail": "Il réutilise tout : règles, carte, carnet de partie.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Plus tard, une fois le jeu complet",
+       "detail": ""
+      },
+      {
+       "id": "c",
+       "label": "Non",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "C'est l'idée de Greg, et elle colle à vos emplois du temps."
+    },
+    {
+     "id": "t03",
+     "titre": "La durée d'une séance ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Libre : on met en pause et on reprend quand on veut",
+       "detail": "Les deux attentes tiennent : 30 minutes ou une soirée.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Fixe, 1 à 2 heures",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "Wesley veut une durée ajustable avec pause, Greg des séances courtes : la pause règle les deux."
+    },
+    {
+     "id": "t04",
+     "titre": "Les personnages ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Prototype avec 4 héros prêts à jouer ; ensuite création guidée complète et sa propre collection de héros",
+       "detail": "La description de Greg sert à écrire les 4 premiers.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Création guidée complète dès le prototype",
+       "detail": "Le prototype prend plusieurs semaines de plus."
+      }
+     ],
+     "pourquoi": "La création complète (le souhait de Wesley) arrive juste après ; les prétirés permettent de tester vite."
+    },
+    {
+     "id": "t05",
+     "titre": "Vue du plan et grille ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Prototype vu de dessus avec des cases carrées ; la perspective (isométrique) ensuite pour l'habillage",
+       "detail": "On valide les règles vite, l'isométrique de Greg vient après.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Isométrique et cases carrées dès le début",
+       "detail": "Plus beau tout de suite, prototype plus long."
+      },
+      {
+       "id": "c",
+       "label": "Vu de dessus avec des hexagones",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "Wesley : dessus + carrés. Greg : isométrique + hexagones. Les carrés marchent dans les deux vues ; l'hexagone en isométrique est peu lisible."
+    },
+    {
+     "id": "t06",
+     "titre": "Quand voit-on le plan ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "En combat et dans les scènes tendues ; le reste du temps, l'image du lieu",
+       "detail": "",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Tout le temps : le plan sert aussi d'image du lieu",
+       "detail": "Logique en isométrique, plus tard."
+      }
+     ],
+     "pourquoi": "Le choix de Wesley pour le prototype ; l'idée de Greg revient quand le plan sera en isométrique."
+    },
+    {
+     "id": "t07",
+     "titre": "Les images ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Plans en tuiles et images de lieux préparés à l'avance ; l'IA illustre certaines scènes pendant la partie",
+       "detail": "Le jeu connaît chaque case du plan ; le coût reste maîtrisé.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Tout généré par l'IA pendant la partie",
+       "detail": "Plans sans cases fiables, coût élevé."
+      }
+     ],
+     "pourquoi": "Une image IA ne dit pas où sont les murs : le plan doit être construit par le jeu."
+    },
+    {
+     "id": "t08",
+     "titre": "Le style graphique ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "BD / dessin animé",
+       "detail": "Le choix de Wesley : lisible, cohérent, pour tous les âges.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Peinture réaliste",
+       "detail": "Le choix de Greg : spectaculaire, mais les défauts des images IA se voient."
+      },
+      {
+       "id": "c",
+       "label": "Un style au choix pour chaque monde, plus tard",
+       "detail": "Comme aiga_ ; on démarre avec un seul."
+      }
+     ],
+     "pourquoi": "Un seul style pour le prototype ; le choix par monde rejoint l'idée de Wesley (plusieurs univers)."
+    },
+    {
+     "id": "t09",
+     "titre": "Les jetons ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Un portrait rond, entouré de la couleur du joueur",
+       "detail": "Le choix de Wesley ; sert aussi dans la barre des héros.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Une figurine dessinée vue de dessus",
+       "detail": "Le choix de Greg ; va bien avec l'isométrique plus tard."
+      }
+     ],
+     "pourquoi": "Le portrait est plus simple à générer et à reconnaître sur un petit écran."
+    },
+    {
+     "id": "t10",
+     "titre": "Le budget IA ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "0 € pour démarrer, jusqu'à 20 €/mois si le prototype plaît",
+       "detail": "",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "0 € toujours",
+       "detail": "Possible, mais récit et images de moindre qualité."
+      },
+      {
+       "id": "c",
+       "label": "Jusqu'à 20 €/mois dès maintenant",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "Greg veut 0 €, Wesley 20 € : on commence gratuit et on paie seulement si ça vaut le coup."
+    },
+    {
+     "id": "t11",
+     "titre": "Le nom : Sk'AI_Land ?",
+     "options": [
+      {
+       "id": "a",
+       "label": "Oui, Sk'AI_Land",
+       "detail": "L'idée de Greg.",
+       "reco": true
+      },
+      {
+       "id": "b",
+       "label": "Non, on cherche encore",
+       "detail": ""
+      }
+     ],
+     "pourquoi": "Original, et le « AI » dit ce qu'est le jeu. À vérifier qu'il n'est pas déjà pris."
+    },
+    {
+     "id": "t12",
+     "titre": "La répartition : Wesley décide de la vision, Greg teste et vérifie l'univers, Claude écrit le code. D'accord ?",
+     "type": "texte",
+     "aide": "Écris « ok » ou ce que tu changerais."
+    }
+   ]
+  }
+ ]
 }

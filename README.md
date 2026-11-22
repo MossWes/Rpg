@@ -18,6 +18,7 @@ avec un maître du jeu IA, relevée le 2026-11-20.
 | `docs/idees-pour-nos-jeux.md` | Ce qu'on peut reprendre comme mécaniques pour nos propres jeux (dont Braisemont) |
 | `docs/jdr/cahier-de-decisions.md` | **Notre JDR avec MJ IA** : la vision et 23 décisions à prendre avec Greg (page interactive : https://claude.ai/artifact/QFyZ1RVBpDr2maw4NXFRCm) |
 | `docs/jdr/reponses-2026-11-22.md` | Réponses de Greg : accords, idées (Sk'AI_Land, deux modes de jeu) et 5 points à trancher |
+| `docs/jdr/tour-2.md` | Tour 2 : les 12 questions pour trancher les désaccords (à envoyer à Greg) |
 | `docs/sources.md` | Les pages lues et ce qui n'a pas pu l'être |
 
 ## Règles du dépôt
