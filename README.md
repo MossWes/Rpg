@@ -20,6 +20,7 @@ avec un maître du jeu IA, relevée le 2026-11-20.
 | `docs/jdr/reponses-2026-11-22.md` | Réponses de Greg : accords, idées (Sk'AI_Land, deux modes de jeu) et 5 points à trancher |
 | `docs/jdr/tour-2.md` | Tour 2 : les 12 questions pour trancher les désaccords (à envoyer à Greg) |
 | `docs/jdr/guide-greg.md` | Guide pas à pas pour Greg : compte GitHub, invitation, Issues, aide de son Claude |
+| `docs/jdr/decisions.md` | **Ce qui est décidé** pour le JDR, et les 2 points qui restent |
 | `docs/sources.md` | Les pages lues et ce qui n'a pas pu l'être |
 
 ## Règles du dépôt
