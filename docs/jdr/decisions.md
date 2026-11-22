@@ -1,6 +1,6 @@
 # Décisions — notre JDR avec MJ IA
 
-> Mis à jour le 2026-11-22, après les deux tours de questions (Wesley et Greg).
+> Mis à jour le 2026-11-22, après les deux tours de questions (Wesley et Greg). **Tout est décidé.**
 > Détail des réponses : `reponses-2026-11-22.md`. Ce qui n'est pas écrit ici n'est pas décidé.
 
 ## Décidé (Wesley et Greg d'accord)
@@ -38,13 +38,9 @@
 - **Budget IA : 0 € pour démarrer**, jusqu'à 20 €/mois si le prototype plaît.
 - **Rôles** : Wesley décide de la vision ; Greg teste et vérifie que l'univers tient la route ; Claude écrit les documents et le code.
 
-## Reste à trancher
-1. **Le direct, pour commencer** : Wesley veut « chacun chez soi, en direct » ; Greg « un écran central (TV) + les téléphones comme manette et fiche ».
-   - Proposition de Claude : ce n'est **pas incompatible**. Chaque joueur est connecté sur son appareil, en direct.
-     Quand vous êtes ensemble, un appareil branché sur la TV affiche une **vue « table »** (la carte et le plan en grand),
-     et les téléphones gardent la fiche et les actions. C'est la même technique : la vue TV n'est qu'un écran de plus.
-   - **Wesley tranche.**
-2. **Le nom du jeu** : *Sk'AI_Land* est refusé par vous deux. À trouver.
+## Tranché par Wesley (2026-11-22)
+1. **Le direct** : on commence par **chacun chez soi**. L'écran de table (TV + téléphones en accessoires) viendra plus tard.
+2. **Le nom** : *Sk'AI_Land* (proposition de Greg) **pour l'instant** ; le nom définitif sera choisi plus tard.
 
 ## À noter
 - Création complète dès le prototype + budget 0 € : le prototype sera plus long à construire qu'avec des héros prêts à jouer. Pas un problème, juste à savoir.
