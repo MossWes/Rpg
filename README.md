@@ -17,6 +17,7 @@ avec un maître du jeu IA, relevée le 2026-11-20.
 | `docs/aiga/mondes-partages.md` | Les mondes publiés par les joueurs, avec liens, mode et style graphique |
 | `docs/idees-pour-nos-jeux.md` | Ce qu'on peut reprendre comme mécaniques pour nos propres jeux (dont Braisemont) |
 | `docs/jdr/cahier-de-decisions.md` | **Notre JDR avec MJ IA** : la vision et 23 décisions à prendre avec Greg (page interactive : https://claude.ai/artifact/QFyZ1RVBpDr2maw4NXFRCm) |
+| `docs/jdr/reponses-2026-11-22.md` | Réponses de Greg : accords, idées (Sk'AI_Land, deux modes de jeu) et 5 points à trancher |
 | `docs/sources.md` | Les pages lues et ce qui n'a pas pu l'être |
 
 ## Règles du dépôt
