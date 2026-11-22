@@ -16,6 +16,16 @@ Ce que tu y feras :
 
 Rien à installer sur un ordinateur. Rien à payer.
 
+## En une phrase : ta seule habitude
+**Quand ton téléphone sonne avec une notification GitHub, c'est à toi.** Tu l'ouvres, tu coches les cases
+ou tu réponds en commentaire, c'est tout. Personne n'a besoin de t'écrire sur WhatsApp ni par mail.
+
+- Chaque nouveau questionnaire ou chaque question pour toi arrive comme une **Issue qui t'est attribuée** :
+  GitHub t'envoie une notification tout seul.
+- La liste de tout ce qui t'attend : https://github.com/issues/assigned (à mettre en favori).
+  Liste vide = rien à faire.
+- Tes réponses sont lues par Claude, qui met les documents à jour et prépare la suite.
+
 ---
 
 ## 1. Créer ton compte GitHub (5 min)
@@ -85,7 +95,8 @@ Pour un gros changement, préfère une Issue : on en discute d'abord.
 4. Une décision prise → elle est écrite dans un fichier du dépôt. Si ce n'est pas dans le dépôt, ce n'est pas décidé.
 5. Tu reçois une notification quand on te répond (application GitHub ou mail).
 
-**Ta première mission :** ouvre une Issue `Tour 2 — réponses de Greg` et colle tes réponses aux 12 questions de `tour-2.md`.
+**Ta première mission :** l'Issue « 🎲 Tour 2 — à toi, Greg » t'attend : https://github.com/MossWes/Rpg/issues/1
+Touche les cases pour cocher tes réponses (🟢 = ce qu'a répondu Wesley), puis écris « fini » en commentaire.
 
 ## 7. Te faire aider par ton Claude
 Claude ne peut pas lire le dépôt tout seul (il est privé). Il faut lui donner le texte :
